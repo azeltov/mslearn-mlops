@@ -25,4 +25,4 @@ jobs:
     - name: Run AML Training Job
       run: |
         cd src
-        az ml job create --file job.yml
+        az ml job create --file job-cluster.yml
