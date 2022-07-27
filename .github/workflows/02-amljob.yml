@@ -1,4 +1,4 @@
-name: Create Azure Machine Learning workspace
+name: Run AML Training Job
 
 on:
   workflow_dispatch:
