@@ -1,4 +1,4 @@
-name: Run AML Training Job
+name: On Merge Run AML Training Job
 
 on: 
   pull_request:
