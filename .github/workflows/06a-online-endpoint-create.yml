@@ -2,6 +2,17 @@
 name: 06a - Endpoint Create
 on:
   workflow_dispatch:
+    inputs:
+      resource_group:
+        description: 'Resource group name'
+        required: true
+        default: 'rg-dev-mlops' 
+        type: string
+      aml_workspace:
+        description: 'Azure Machine Learning workspace name'
+        required: true
+        default: 'mlw-dev-mlops' 
+        type: string
 
 jobs:
   deploy:
@@ -25,4 +36,4 @@ jobs:
       id: deploy
       run: |
         cd src
-        az ml online-endpoint create --name my-endpoint -f endpoint.yml --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops
+        az ml online-endpoint create --name my-endpoint -f endpoint.yml
