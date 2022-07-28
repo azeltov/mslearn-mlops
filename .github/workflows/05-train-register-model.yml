@@ -62,4 +62,4 @@ jobs:
         model_name=${{ needs.train.outputs.job_name }}
         echo "model_name: $model_name"
         az ml model create --name diabetes-model --version 1 --path azureml://jobs/$model_name/outputs/artifacts/paths/model/
-        
+      
