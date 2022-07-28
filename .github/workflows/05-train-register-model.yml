@@ -63,6 +63,6 @@ jobs:
       id: register
       run: |
         cd src
-        model_name="${{ needs.train.outputs.job_name }}"
+        model_name=${{ needs.train.outputs.job_name }}
         echo "model_name: $model_name"
         echo az ml model create --name diabetes-model --version 1 --path azureml://jobs/$model_name/outputs/artifacts/paths/model/ --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops
