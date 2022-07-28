@@ -6,7 +6,7 @@ on:
       - closed
 
 jobs:
-  build:
+  onmerge:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repo
