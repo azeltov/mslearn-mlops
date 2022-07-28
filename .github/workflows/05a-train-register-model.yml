@@ -1,4 +1,4 @@
-name: 05-Training Register Model
+name: 05a-Training Register Model
 
 on:
   workflow_dispatch:
@@ -61,6 +61,6 @@ jobs:
         cd src
         model_name=${{ needs.train.outputs.job_name }}
         echo "model_name: $model_name"
-        az ml model create --name diabetes-model --version 1 --path azureml://jobs/$model_name/outputs/artifacts/paths/model/
+        az ml model create --name diabetes-model2 --version 1 --path azureml://jobs/$model_name/outputs/artifacts/paths/model/  --type mlflow_model
         #az ml model create -n diabetes-model -p runs:/patient_ear_3dqx3xgmxj/model --type mlflow_model
       
