@@ -21,7 +21,8 @@ def main(args):
     X_train, X_test, y_train, y_test = process_data(df)
 
     # train model
-    model = train_model(args.reg_rate, X_train, X_test, y_train, y_test) # noqa: F841
+    model = train_model(args.reg_rate, X_train,  # noqa: F841
+                        X_test, y_train, y_test)
 
 
 def get_csvs_df(path):
@@ -40,8 +41,8 @@ def process_data(df):
                'Age']].values, df['Diabetic'].values
 
     # train/test split
-    X_train, X_test, y_train, y_test = train_test_split \
-                    (X, y, test_size=0.30, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.30, random_state=0)
 
     # return splits and encoder
     return X_train, X_test, y_train, y_test
