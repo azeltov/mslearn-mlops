@@ -39,16 +39,13 @@ jobs:
         cd src
         job=$(az ml job create --file job-cluster.yml)
         echo "job:$job"
-
-        echo "job display name:"
-        echo $job | jq .display_name
-        echo "::set-output name=job_name:: $(job | jq .display_name)"
-        # az ml model create --name diabetes-model --version 1 --path azureml://jobs/dreamy_pin_6dmy3tcsr1/outputs/artifacts/paths/model/ --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops
+        display_name=$($job | jq .display_name)
+        echo "job display name: $display_name"
+        echo "::set-output name=job_name::$(display_name)"
   register:
     runs-on: ubuntu-latest
     environment: DEV
-    needs:
-      - train
+    needs: train
     steps:
     - name: Check out repo
       uses: actions/checkout@main
