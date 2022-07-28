@@ -1,4 +1,4 @@
-name: PyTest
+name: 04-PyTest
 
 on:
   workflow_dispatch:
