@@ -23,6 +23,12 @@ def main(args):
     # train model
     model = train_model(args.reg_rate, X_train,  # noqa: F841
                         X_test, y_train, y_test)
+    run_id = mlflow.active_run().info.run_id
+    print(run_id)
+    # mlflow.register_model()                    
+    # register model using mlflow model
+    # model_uri = f'runs:/{run_id}/{args.model_name}'
+    # mlflow.register_model(model_uri, model_name)
 
 
 def get_csvs_df(path):
