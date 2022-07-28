@@ -36,12 +36,8 @@ jobs:
     - name: Run AML Training Job
       id: train
       run: |
-        cd src
-        job=$(az ml job create --file job-cluster.yml)
-        echo "job:$job"
-        display_name=$($job | jq .display_name)
-        echo "job display name: $display_name"
-        echo "::set-output name=job_name::$(display_name)"
+        cd src   
+        echo "::set-output name=job_name::$(az ml job create --file job-cluster.yml | jq .display_name)"
   register:
     runs-on: ubuntu-latest
     environment: DEV
