@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+name: 06 - Deploy Model
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: development
+    outputs:
+      display_name: ${{ steps.step4.outputs.display_name}}
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@main
+    - name: Install az ml extension
+      run: az extension add -n ml -y
+    - name: Azure login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+    - name: Set Azure ML workspace as default
+      run: |
+        az configure --defaults group="${{ github.event.inputs.resource_group }}"
+        az configure --defaults workspace="${{ github.event.inputs.aml_workspace }}"
+    - name: Deploy Model
+      id: deploy
+      run: |
+        cd src
+        az ml online-deployment create --name mlflow-deployment --endpoint my-endpoint --file mlflow-deploy.yml
