@@ -37,7 +37,7 @@ jobs:
       id: train
       run: |
         cd src
-        job = $(az ml job create --file job-cluster.yml)
+        job=$(az ml job create --file job-cluster.yml)
         echo "job"
         echo $job 
         echo "job display name"
