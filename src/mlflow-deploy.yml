@@ -1,6 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
-name: mlflow-deployment
-endpoint_name: az-hack-diabetes
+name: mlflow-dep-hack01
+endpoint_name: az-mlops-hack01
 model: azureml:diabetes-model@latest
 instance_type: Standard_DS2_v2
 instance_count: 1

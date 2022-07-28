@@ -24,4 +24,6 @@ jobs:
       id: deploy
       run: |
         cd src
-        az ml online-deployment create --name mlflow-deployment --endpoint my-endpoint --file mlflow-deploy.yml --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops
+        az ml online-deployment create  --file mlflow-deploy.yml
+        #az ml online-deployment create --name mlflow-deployment --endpoint my-endpoint --file mlflow-deploy.yml --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops
+        

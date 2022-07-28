@@ -1,3 +1,3 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
-name: az-mlopshack-01
+name: az-mlops-hack01
 auth_mode: key

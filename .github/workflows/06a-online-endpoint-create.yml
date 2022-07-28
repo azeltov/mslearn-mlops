@@ -36,4 +36,5 @@ jobs:
       id: deploy
       run: |
         cd src
-        az ml online-endpoint create --name my-endpoint -f endpoint.yml
+        az ml online-endpoint create -f endpoint.yml
+        #az ml online-endpoint create --name my-endpoint -f endpoint.yml --resource-group rg-dev-mlops --workspace-name mlw-dev-mlops
