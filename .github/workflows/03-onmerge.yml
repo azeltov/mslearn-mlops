@@ -6,7 +6,7 @@ on:
       - closed
 
 jobs:
-  build:
+  onmerge:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repo
@@ -33,7 +33,7 @@ jobs:
 
     - name: Install pytest
       run: |
-        python -m pip install pytest
+        python -m pip install pytest mlflow sklearn
     - name: Run pytest
       run: | 
         python -m pytest tests 
