@@ -1,4 +1,4 @@
-name: Create Azure Machine Learning workspace
+name: 00-Create Azure Machine Learning workspace
 
 on:
   workflow_dispatch:

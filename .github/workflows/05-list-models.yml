@@ -1,5 +1,5 @@
 # This is a basic workflow to help you get started with Actions
-name: List models in prod
+name: 05-List models in prod
 
 on:
   workflow_dispatch

@@ -1,4 +1,4 @@
-name: On Merge Run AML Training Job
+name: 03-On Merge Run AML Training Job
 
 on: 
   pull_request:

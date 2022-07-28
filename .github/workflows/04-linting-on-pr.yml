@@ -1,4 +1,4 @@
-name: Linting
+name: 04-Linting PR
 
 on: 
   pull_request:

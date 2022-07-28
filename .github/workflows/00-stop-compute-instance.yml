@@ -1,4 +1,4 @@
-name: Stop compute instance
+name: 00-Stop compute instance
 
 on:
   workflow_dispatch:

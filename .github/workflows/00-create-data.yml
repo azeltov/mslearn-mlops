@@ -1,4 +1,4 @@
-name: Create data asset
+name: 00-Create data asset
 
 on:
   workflow_dispatch:
