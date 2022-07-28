@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: development
-    outputs:
-      display_name: ${{ steps.step4.outputs.display_name}}
     steps:
     - name: Check out repo
       uses: actions/checkout@main
